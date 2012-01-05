@@ -6,7 +6,7 @@ blindparser is a RSS/ATOM feed parser that returns the requested feed urls in a 
 Motivation
 ----------
 
-RSS and ATOM feeds are both trying to deliver similar content, but and different enough with their structure to be aggravating. The purpose of blindparser is to allow for the important parts of the feeds (article titles, links, etc) to be returned in a standard format, but to also return the rest of the feed in a reasonable way.
+RSS and ATOM feeds are both trying to deliver similar content, but are different enough with their structure to be aggravating. The purpose of blindparser is to allow for the important parts of the feeds (article titles, links, etc) to be returned in a standard format, but to also return the rest of the feed in a reasonable way.
 
 Installing
 ----------
