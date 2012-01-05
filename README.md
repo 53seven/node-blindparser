@@ -1,5 +1,5 @@
 node-blindparser
------------
+----------------
 
 blindparser is a RSS/ATOM feed parser that returns the requested feed urls in a json object that is formatted so that you will not have to worry (much) about the format of the requested feed.
 
@@ -31,7 +31,7 @@ parser.parseURL('http://rss.cnn.com/rss/cnn_topstories.rss', options, function(e
 });
 //atom feeds
 parser.parseURL('http://www.blogger.com/feeds/10861780/posts/default', options, function(err, out){
-	console.log(JSON.stringify(out));
+	console.log(out);
 });
 ```
 
@@ -64,13 +64,13 @@ The 'minimal' output format is:
 TODO
 -----
 
-Tests (lots of tests)
-Add error handeling for bad urls / poorly formatted xml & feeds
+* Tests (lots of tests)
+* Add error handeling for bad urls / poorly formatted xml & feeds
 
 
 Changelog
 ---------
 
-0.0.1 - Initial Commit
+* 0.0.1 - Initial Commit
 
 

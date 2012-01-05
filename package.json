@@ -19,6 +19,6 @@
 			"request":">=2.2.9",
 			"jquery":">=1.6.3"
     },
-    "main": "./lib/parser"
+    "main": "./lib/feed.js"
 }
 
