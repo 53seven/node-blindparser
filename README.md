@@ -65,7 +65,8 @@ TODO
 -----
 
 * Tests (lots of tests)
-* Add error handeling for bad urls / poorly formatted xml & feeds
+* Add error handling for bad urls / poorly formatted xml & feeds
+* Remove jQuery, as it is only used for interation right now
 
 
 Changelog
