@@ -1,0 +1,24 @@
+{
+    "name": "blindparser",
+    "version": "0.0.1",
+    "description": "blind-parser is an all purpose RSS/ATOM feed parser that parses feeds into a common format so that you do not have to care if they are RSS or ATOM feeds.",
+    "keywords": [
+        "rss",
+        "atom",
+        "feed",
+        "parser"
+    ],
+    "repository":
+        {
+            "type": "git",
+            "url": "http://github.com/SyndromeSoftware/node-blindparser.git"
+        }
+    ,
+    "dependencies": {
+      "xml2js": ">= 0.1.13",
+			"request":">=2.2.9",
+			"jquery":">=1.6.3"
+    },
+    "main": "./lib/parser"
+}
+
