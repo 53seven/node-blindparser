@@ -1,6 +1,6 @@
 {
     "name": "blindparser",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "blindparser is an all purpose RSS/ATOM feed parser that parses feeds into a common format so that you do not have to care if they are RSS or ATOM feeds.",
     "keywords": [
         "rss",
