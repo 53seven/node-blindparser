@@ -1,6 +1,6 @@
 {
     "name": "blindparser",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "description": "blindparser is an all purpose RSS/ATOM feed parser that parses feeds into a common format so that you do not have to care if they are RSS or ATOM feeds.",
     "keywords": [
         "rss",
@@ -16,8 +16,14 @@
     ,
     "dependencies": {
       "xml2js": ">= 0.1.13",
-			"request":">=2.2.9",
+			"request":"2.9.3",
 			"underscore":"*"
+    },
+    "devDependencies":{
+      "vows":"*"
+    },
+    "scripts":{
+      "test":"node_modules/.bin/vows --spec test/*"
     },
     "main": "./lib/feed.js"
 }
