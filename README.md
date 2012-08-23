@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/dropdownmenu/node-blindparser.png)](http://travis-ci.org/dropdownmenu/node-blindparser)
 node-blindparser
 ----------------
 
