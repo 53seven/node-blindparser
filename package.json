@@ -23,7 +23,7 @@
       "vows":"*"
     },
     "scripts":{
-      "test":"node_modules/.bin/vows --spec test/*"
+      "test":"vows --spec test/*"
     },
     "main": "./lib/feed.js"
 }

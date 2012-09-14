@@ -36,6 +36,21 @@ vows.describe('bindparser').addBatch({
       assert.isArray(docs.items);
     }
   },
+  'feedburner tests': {
+    topic: function() {
+      parser.parseURL('http://feeds.feedburner.com/TechCrunch', this.callback);
+    },
+    'response is not null':function(err, docs){
+      assert.isNull(err);
+      assert.isNotNull(docs);
+    },
+    'response is formatted as rss':function(err, docs){
+      assert.equal(docs.type, 'rss');
+      assert.isObject(docs.metadata);
+      assert.isArray(docs.items);
+
+    }
+  },
   'oddities':{
     'empty xml':{
       topic:function(){

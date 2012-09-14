@@ -1,6 +1,6 @@
-[![build status](https://secure.travis-ci.org/dropdownmenu/node-blindparser.png)](http://travis-ci.org/dropdownmenu/node-blindparser)
 node-blindparser
 ----------------
+[![build status](https://secure.travis-ci.org/dropdownmenu/node-blindparser.png)](http://travis-ci.org/dropdownmenu/node-blindparser)
 
 blindparser is a RSS/ATOM feed parser that returns the requested feed urls in a json object that is formatted so that you will not have to worry (much) about the format of the requested feed.
 
