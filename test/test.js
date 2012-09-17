@@ -48,7 +48,6 @@ vows.describe('bindparser').addBatch({
       assert.equal(docs.type, 'rss');
       assert.isObject(docs.metadata);
       assert.isArray(docs.items);
-
     }
   },
   'oddities':{
