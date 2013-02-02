@@ -25,7 +25,16 @@ Using blind parser is easy, just call:
 
 ```
 var parser = require('blindparser');
-var options = {};
+
+// with no options
+parser.parseURL('http://rss.cnn.com/rss/cnn_topstories.rss', function(err, out){
+	console.log(out);
+});
+
+var options = {
+	followRedirect: false,
+	timeout: 1000
+};
 //rss feeds
 parser.parseURL('http://rss.cnn.com/rss/cnn_topstories.rss', options, function(err, out){
 	console.log(out);
@@ -35,6 +44,11 @@ parser.parseURL('http://www.blogger.com/feeds/10861780/posts/default', options, 
 	console.log(out);
 });
 ```
+
+Options
+-------
+
+The options hash is passed through to [request](https://github.com/mikeal/request) for fetching a given url.
 
 Output
 ------
@@ -76,7 +90,7 @@ tests.
 
 License
 -------
-Copyright (c) 2012 Syndrome Software
+Copyright (c) 2012 Tim McGowan (dropdownmenu)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
