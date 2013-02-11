@@ -60,5 +60,39 @@ vows.describe('bindparser').addBatch({
         assert.isNull(docs);
       }
     }
+  },
+  'craigslist':{
+    topic: function () {
+      parser.parseURL('http://portland.craigslist.org/sof/index.rss', this.callback);
+    },
+    'response is formatted as rss': function (err, docs) {
+      assert.equal(docs.type, 'rss');
+      assert.isObject(docs.metadata);
+      assert.isArray(docs.items);
+    },
+    'response contains items': function (err, docs) {
+      assert.isArray(docs.items);
+      assert.ok(docs.items.length > 0);
+    },
+    'response items have titles': function (err, docs) {
+      assert.isArray(docs.items);
+      assert.ok(docs.items.length > 0);
+      assert.isNotNull(docs.items[0].title);
+    },
+    'response items have links': function (err, docs) {
+      assert.isArray(docs.items);
+      assert.ok(docs.items.length > 0);
+      assert.isNotNull(docs.items[0].link);
+    },
+    'response items have desc': function (err, docs) {
+      assert.isArray(docs.items);
+      assert.ok(docs.items.length > 0);
+      assert.isNotNull(docs.items[0].desc);
+    },
+    'response items have date': function (err, docs) {
+      assert.isArray(docs.items);
+      assert.ok(docs.items.length > 0);
+      assert.isNotNull(docs.items[0].date);
+    }
   }
 }).export(module);
