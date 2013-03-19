@@ -12,7 +12,7 @@ vows.describe('bindparser').addBatch({
     topic:function(){
       parser.parseURL('http://rss.cnn.com/rss/cnn_topstories.rss', {}, this.callback);
     },
-    'reponse is not null':function(err, docs){
+    'response is not null':function(err, docs){
       assert.isNull(err);
       assert.isNotNull(docs);
     },
@@ -26,7 +26,7 @@ vows.describe('bindparser').addBatch({
     topic:function(){
       parser.parseURL('http://www.blogger.com/feeds/10861780/posts/default', {}, this.callback);
     },
-    'reponse is not null':function(err, docs){
+    'response is not null':function(err, docs){
       assert.isNull(err);
       assert.isNotNull(docs);
     },
@@ -34,7 +34,11 @@ vows.describe('bindparser').addBatch({
       assert.equal(docs.type, 'atom');
       assert.isObject(docs.metadata);
       assert.isArray(docs.items);
-    }
+    },
+    'response contains items': function (err, docs) {
+      assert.isArray(docs.items);
+      assert.ok(docs.items.length > 0);
+    },
   },
   'feedburner tests': {
     topic: function() {
