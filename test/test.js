@@ -56,6 +56,12 @@ vows.describe('bindparser').addBatch({
     'response contains items':function(err, docs) {
       assert.isArray(docs.items);
       assert.ok(docs.items.length > 0);
+    },
+    'response contains images':function(err, docs) {
+      assert.ok(docs.metadata.image);
+      docs.items.forEach(function(item){
+        assert.ok(item.media.thumbnail);
+      });
     }
   },
   'oddities':{
