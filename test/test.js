@@ -60,7 +60,8 @@ vows.describe('bindparser').addBatch({
     'response contains images':function(err, docs) {
       assert.ok(docs.metadata.image);
       docs.items.forEach(function(item){
-        assert.ok(item.media.thumbnail);
+        //assert.ok(item.media.thumbnail); its seems like that a item doesnt necessarily have a thumbnail on feedburner 
+        //(see "HP: That Big 3D Printing Announcement In June? Never mind!" Posted:Tue, 25 Mar 2014 13:59:57 +0000) 
       });
     }
   },
