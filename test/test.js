@@ -7,104 +7,108 @@ var assert = require('assert');
 var parser = require('../lib/feed.js');
 
 vows.describe('bindparser').addBatch({
-
-  'rss tests':{
-    topic:function(){
+  'rss tests': {
+    topic: function() {
       parser.parseURL('http://rss.cnn.com/rss/cnn_topstories.rss', {}, this.callback);
     },
-    'response is not null':function(err, docs){
+    'response is not null': function(err, docs) {
       assert.isNull(err);
       assert.isNotNull(docs);
     },
-    'response is properly formatted':function(err, docs){
+    'response is properly formatted': function(err, docs) {
       assert.equal(docs.type, 'rss');
       assert.isObject(docs.metadata);
       assert.isArray(docs.items);
     }
   },
-  'atom tests':{
-    topic:function(){
+  'atom tests': {
+    topic: function() {
       parser.parseURL('http://www.blogger.com/feeds/10861780/posts/default', {}, this.callback);
     },
-    'response is not null':function(err, docs){
+    'response is not null': function(err, docs) {
       assert.isNull(err);
       assert.isNotNull(docs);
     },
-    'response is properly formatted':function(err, docs){
+    'response is properly formatted': function(err, docs) {
       assert.equal(docs.type, 'atom');
       assert.isObject(docs.metadata);
       assert.isArray(docs.items);
     },
-    'response contains items': function (err, docs) {
+    'response contains items': function(err, docs) {
       assert.isArray(docs.items);
       assert.ok(docs.items.length > 0);
-    },
+    }
   },
   'feedburner tests': {
     topic: function() {
       parser.parseURL('http://feeds.feedburner.com/TechCrunch', this.callback);
     },
-    'response is not null':function(err, docs){
+    'response is not null': function(err, docs) {
       assert.isNull(err);
       assert.isNotNull(docs);
     },
-    'response is formatted as rss':function(err, docs){
+    'response is formatted as rss': function(err, docs) {
       assert.equal(docs.type, 'rss');
       assert.isObject(docs.metadata);
       assert.isArray(docs.items);
     },
-    'response contains items':function(err, docs) {
+    'response contains items': function(err, docs) {
       assert.isArray(docs.items);
       assert.ok(docs.items.length > 0);
     },
-    'response contains images':function(err, docs) {
+    'response contains images': function(err, docs) {
       assert.ok(docs.metadata.image);
-      docs.items.forEach(function(item){
-        //assert.ok(item.media.thumbnail); its seems like that a item doesnt necessarily have a thumbnail on feedburner 
-        //(see "HP: That Big 3D Printing Announcement In June? Never mind!" Posted:Tue, 25 Mar 2014 13:59:57 +0000) 
-      });
     }
   },
-  'oddities':{
-    'empty xml':{
-      topic:function(){
+  'oddities': {
+    'empty xml': {
+      topic: function() {
         parser.parseString('<?xml version="1.0" ecoding="UTF-8"?>', {}, this.callback);
       },
-      'returns an error && docs is null':function(err, docs){
-        assert.isNotNull(err);
-        assert.isNull(docs);
+      'returns an error': function(err, docs) {
+        assert.instanceOf(err, Error);
+        assert.isUndefined(docs);
+      }
+    },
+    'non xml url': {
+      topic: function() {
+        parser.parseURL('http://google.com', {}, this.callback);
+      },
+      'returns an error': function(err, docs) {
+        assert.instanceOf(err, Error);
+        assert.isUndefined(docs);
       }
     }
   },
-  'craigslist':{
-    topic: function () {
+  'craigslist': {
+    topic: function() {
       parser.parseURL('http://portland.craigslist.org/sof/index.rss', this.callback);
     },
-    'response is formatted as rss': function (err, docs) {
+    'response is formatted as rss': function(err, docs) {
       assert.equal(docs.type, 'rss');
       assert.isObject(docs.metadata);
       assert.isArray(docs.items);
     },
-    'response contains items': function (err, docs) {
+    'response contains items': function(err, docs) {
       assert.isArray(docs.items);
       assert.ok(docs.items.length > 0);
     },
-    'response items have titles': function (err, docs) {
+    'response items have titles': function(err, docs) {
       assert.isArray(docs.items);
       assert.ok(docs.items.length > 0);
       assert.isNotNull(docs.items[0].title);
     },
-    'response items have links': function (err, docs) {
+    'response items have links': function(err, docs) {
       assert.isArray(docs.items);
       assert.ok(docs.items.length > 0);
       assert.isNotNull(docs.items[0].link);
     },
-    'response items have desc': function (err, docs) {
+    'response items have desc': function(err, docs) {
       assert.isArray(docs.items);
       assert.ok(docs.items.length > 0);
       assert.isNotNull(docs.items[0].desc);
     },
-    'response items have date': function (err, docs) {
+    'response items have date': function(err, docs) {
       assert.isArray(docs.items);
       assert.ok(docs.items.length > 0);
       assert.isNotNull(docs.items[0].date);

@@ -14,7 +14,7 @@
     "url": "http://github.com/dropdownmenu/node-blindparser.git"
   },
   "dependencies": {
-    "xml2js": "0.4.1",
+    "xml2js": "0.4.2",
     "request": "2.34.0",
     "underscore": "1.6.0"
   },
