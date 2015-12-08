@@ -13,6 +13,7 @@
     "type": "git",
     "url": "http://github.com/kiernanmcgowan/node-blindparser.git"
   },
+  "author": "@kiernan",
   "dependencies": {
     "lodash": "^3.10.1",
     "request": "^2.67.0",
