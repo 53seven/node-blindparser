@@ -1,6 +1,6 @@
 node-blindparser
 ----------------
-[![build status](https://secure.travis-ci.org/dropdownmenu/node-blindparser.png)](http://travis-ci.org/dropdownmenu/node-blindparser)
+[![build status](https://secure.travis-ci.org/kiernanmcgowan/node-blindparser.png)](http://travis-ci.org/kiernanmcgowan/node-blindparser)
 
 blindparser is a RSS/ATOM feed parser that returns the requested feed urls in a json object that is formatted so that you will not have to worry (much) about the format of the requested feed.
 
@@ -11,8 +11,6 @@ RSS and ATOM feeds are both trying to deliver similar content, but are different
 
 Installing
 ----------
-
-Like all node.js modules, just use npm!
 
 ```
 npm install blindparser
@@ -90,7 +88,7 @@ tests.
 
 License
 -------
-Copyright (c) 2013 Tim McGowan (dropdownmenu)
+Copyright (c) 2015 Kiernan McGowan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
