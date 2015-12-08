@@ -11,12 +11,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/dropdownmenu/node-blindparser.git"
+    "url": "http://github.com/kiernanmcgowan/node-blindparser.git"
   },
   "dependencies": {
-    "xml2js": "^0.4.2",
-    "request": "^2.34.0",
-    "underscore": "^1.6.0"
+    "lodash": "^3.10.1",
+    "request": "^2.67.0",
+    "xml2js": "^0.4.15"
   },
   "devDependencies": {
     "vows": "*"
