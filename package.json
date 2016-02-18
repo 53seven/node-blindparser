@@ -15,9 +15,9 @@
   },
   "author": "@kiernan",
   "dependencies": {
-    "lodash": "^3.10.1",
-    "request": "^2.67.0",
-    "xml2js": "^0.4.15"
+    "lodash": "^4.5.0",
+    "request": "^2.69.0",
+    "xml2js": "^0.4.16"
   },
   "devDependencies": {
     "vows": "*"

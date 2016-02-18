@@ -6,3 +6,6 @@ node_js:
   - 5.0
   - "node"
   - "iojs"
+notifications:
+   email: false
+   slack: 53seven:UcTxhCtagegfFeLy0sNJOojV
