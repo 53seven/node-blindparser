@@ -1,10 +1,9 @@
-// string test.js
-// why does this not work?
-
+// test.js
 var vows = require('vows');
 var assert = require('assert');
 
 var parser = require('../lib/feed.js');
+
 
 vows.describe('bindparser').addBatch({
   'rss tests': {
@@ -68,7 +67,16 @@ vows.describe('bindparser').addBatch({
       'returns an error': function(err, docs) {
         assert.instanceOf(err, Error);
         assert.isUndefined(docs);
-      }
+      },
+    },
+    'bad status code': {
+      topic: function() {
+        parser.parseURL('http://google.com/notafile', this.callback);
+      },
+      'returns an error': function(err, docs) {
+        assert.instanceOf(err, Error);
+        assert.isUndefined(docs);
+      },
     },
     'non xml url': {
       topic: function() {
