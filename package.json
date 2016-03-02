@@ -11,9 +11,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/kiernanmcgowan/node-blindparser.git"
+    "url": "http://github.com/53seven/node-blindparser.git"
   },
-  "author": "@kiernan",
+  "author": {
+    "name": "kiernan",
+    "email": "kiernan@537.io",
+    "url": "537.io"
+  },
   "dependencies": {
     "lodash": "^4.5.0",
     "request": "^2.69.0",

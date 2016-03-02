@@ -1,6 +1,6 @@
 node-blindparser
 ----------------
-[![build status](https://secure.travis-ci.org/kiernanmcgowan/node-blindparser.png)](http://travis-ci.org/kiernanmcgowan/node-blindparser)
+[![build status](https://secure.travis-ci.org/53seven/node-blindparser.svg)](http://travis-ci.org/53seven/node-blindparser)
 
 blindparser is a RSS/ATOM feed parser that returns the requested feed urls in a json object that is formatted so that you will not have to worry (much) about the format of the requested feed.
 
@@ -21,7 +21,7 @@ Usage
 
 Using blind parser is easy, just call:
 
-```
+```js
 var parser = require('blindparser');
 
 // with no options
@@ -55,7 +55,7 @@ The point of `blindparser` is to try and hide the format of the originally reque
 
 The 'minimal' output format is:
 
-```
+```js
 {
 	type:"rss" or "atom"
 	metadata:{
@@ -88,7 +88,8 @@ tests.
 
 License
 -------
-Copyright (c) 2015 Kiernan McGowan
+Copyright (c) 2016 53seven, LLC
+Originally Created by Kiernan McGowan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

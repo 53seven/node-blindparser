@@ -1,11 +1,12 @@
 language: node_js
 node_js:
-  - 0.10
-  - 0.12
-  - 4.0
-  - 5.0
-  - "node"
-  - "iojs"
+- 0.1
+- 0.12
+- 4.0
+- 5.0
+- node
+- iojs
 notifications:
-   email: false
-   slack: 53seven:UcTxhCtagegfFeLy0sNJOojV
+  email: false
+  slack:
+    secure: T9PQYr9cu9MV5UTJzNfQSToXSApj+LVw/jaDqtOosFQ9dBtVO/3U3YUu+8VMopuNLanfbkVZJLXk74g0ojkiVbodDMWE+XhWkYL4Gzi3/VKxW1g9xNbz5vdn3+mb1BF5RVmeRQ7V3Qoyl5CjjgywCK2MM/kpLEfajqtumHWJf6U=
