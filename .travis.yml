@@ -1,11 +1,8 @@
 language: node_js
 node_js:
-- 0.1
-- 0.12
-- 4.0
-- 5.0
-- node
-- iojs
+  - 4
+  - 5
+  - node
 notifications:
   email: false
   slack:
