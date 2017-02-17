@@ -17,7 +17,25 @@ vows.describe('bindparser').addBatch({
     'response is properly formatted': function(err, docs) {
       assert.equal(docs.type, 'rss');
       assert.isObject(docs.metadata);
+      assert.isString(docs.metadata.title);
+      assert.isString(docs.metadata.desc);
+      assert.isString(docs.metadata.url);
+      assert.isString(docs.metadata.lastBuildDate);
+      assert.isString(docs.metadata.update);
+      assert.isString(docs.metadata.ttl);
+      assert.isArray(docs.metadata.image);
+    },
+    'response contains items': function(err, docs) {
       assert.isArray(docs.items);
+      assert.ok(docs.items.length > 0);
+      var item = docs.items[0];
+      assert.isString(item.title);
+      assert.isString(item.desc);
+      assert.isArray(item.category);
+      assert.isString(item.link);
+      assert.isNumber(item.date);
+      assert.isObject(item.guid);
+      assert.isString(item.guid.link);
     }
   },
   'atom tests': {
@@ -31,11 +49,26 @@ vows.describe('bindparser').addBatch({
     'response is properly formatted': function(err, docs) {
       assert.equal(docs.type, 'atom');
       assert.isObject(docs.metadata);
-      assert.isArray(docs.items);
+      assert.isString(docs.metadata.title);
+      assert.isString(docs.metadata.desc);
+      assert.isString(docs.metadata.url);
+      assert.isString(docs.metadata.id);
+      assert.isString(docs.metadata.update);
+      assert.isObject(docs.metadata.author);
     },
     'response contains items': function(err, docs) {
       assert.isArray(docs.items);
       assert.ok(docs.items.length > 0);
+      var item = docs.items[0];
+      assert.isString(item.id);
+      assert.isString(item.title);
+      assert.isString(item.desc);
+      assert.isArray(item.category);
+      assert.isString(item.link);
+      assert.isNumber(item.date);
+      assert.isNumber(item.updated);
+      assert.isObject(item.media);
+      assert.isObject(item.media.thumbnail);
     }
   },
   'feedburner tests': {
