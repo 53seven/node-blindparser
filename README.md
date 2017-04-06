@@ -1,5 +1,7 @@
 node-blindparser
 ----------------
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/53seven/node-blindparser.svg)](https://greenkeeper.io/)
 [![build status](https://secure.travis-ci.org/53seven/node-blindparser.svg)](http://travis-ci.org/53seven/node-blindparser)
 
 blindparser is a RSS/ATOM feed parser that returns the requested feed urls in a json object that is formatted so that you will not have to worry (much) about the format of the requested feed.
